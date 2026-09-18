@@ -98,7 +98,7 @@ function Index() {
               height={44}
               className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-accent/60"
             />
-            <span className="truncate font-display text-lg font-extrabold tracking-tight text-primary sm:text-xl">
+            <span className="hidden font-display text-lg font-extrabold tracking-tight text-primary sm:inline sm:text-xl">
               Ocumare Turismo
             </span>
           </a>
