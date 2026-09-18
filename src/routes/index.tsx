@@ -6,7 +6,7 @@ import aventurasImg from "@/assets/aventuras.jpg";
 import alianzasImg from "@/assets/alianzas.jpg";
 import logoAsset from "@/assets/logo.png.asset.json";
 
-const WHATSAPP_NUMBER = "0000000000"; // TODO: reemplazar con el número real de Ocumare Turismo (formato internacional sin +)
+const WHATSAPP_NUMBER = "584243312563";
 const WHATSAPP_MSG =
   "¡Hola Ocumare Turismo! Quiero más información para reservar mi experiencia en la playa.";
 
@@ -133,8 +133,8 @@ function Index() {
             🌴 Ocumare · Venezuela
           </span>
           <h1 className="mt-6 font-display text-4xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-6xl md:text-7xl">
-            Vive la mejor experiencia turística en{" "}
-            <span className="text-gradient-gold">Ocumare</span>
+            Descansa, celebra y vive{" "}
+            <span className="text-gradient-gold">Ocumare</span> a tu medida.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg text-white/90 drop-shadow sm:text-xl">
             Casa playera, bodas a la orilla del mar, aventuras en La Ciénaga y
