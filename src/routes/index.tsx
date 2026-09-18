@@ -1,9 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import heroImg from "@/assets/hero.jpg";
 import casaImg from "@/assets/casa.jpg";
 import eventosImg from "@/assets/eventos.jpg";
 import aventurasImg from "@/assets/aventuras.jpg";
 import alianzasImg from "@/assets/alianzas.jpg";
+import galCasa1 from "@/assets/gal-casa-1.jpg";
+import galCasa2 from "@/assets/gal-casa-2.jpg";
+import galEvento1 from "@/assets/gal-evento-1.jpg";
+import galEvento2 from "@/assets/gal-evento-2.jpg";
+import galBote1 from "@/assets/gal-bote-1.jpg";
+import galBote2 from "@/assets/gal-bote-2.jpg";
 import logoAsset from "@/assets/logo.png.asset.json";
 
 const WHATSAPP_NUMBER = "584243312563";
@@ -84,7 +91,25 @@ const trust = [
   },
 ];
 
+const galleryFilters = ["Todo", "Casa", "Eventos", "Botes"] as const;
+
+const gallery = [
+  { img: galCasa1, alt: "Sala de la casa vacacional con vista al jardín", cat: "Casa" },
+  { img: galCasa2, alt: "Terraza y piscina frente al mar", cat: "Casa" },
+  { img: casaImg, alt: "Casa vacacional de playa en Ocumare", cat: "Casa" },
+  { img: galEvento1, alt: "Boda a la orilla del mar al atardecer", cat: "Eventos" },
+  { img: galEvento2, alt: "Fiesta nocturna en la playa con luces cálidas", cat: "Eventos" },
+  { img: eventosImg, alt: "Celebración organizada frente al océano", cat: "Eventos" },
+  { img: galBote1, alt: "Traslado en lancha hacia La Ciénaga", cat: "Botes" },
+  { img: galBote2, alt: "Paseo en Banana sobre aguas turquesa", cat: "Botes" },
+  { img: aventurasImg, alt: "Aventuras acuáticas en La Ciénaga", cat: "Botes" },
+];
+
 function Index() {
+  const [filter, setFilter] = useState<(typeof galleryFilters)[number]>("Todo");
+  const [lightbox, setLightbox] = useState<number | null>(null);
+  const visible = filter === "Todo" ? gallery : gallery.filter((g) => g.cat === filter);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
@@ -104,6 +129,7 @@ function Index() {
           </a>
           <div className="hidden items-center gap-6 font-body text-sm font-medium text-foreground/80 md:flex">
             <a href="#servicios" className="transition-colors hover:text-primary">Servicios</a>
+            <a href="#galeria" className="transition-colors hover:text-primary">Galería</a>
             <a href="#confianza" className="transition-colors hover:text-primary">Por qué elegirnos</a>
             <a href="#contacto" className="transition-colors hover:text-primary">Contacto</a>
           </div>
@@ -222,6 +248,114 @@ function Index() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* GALERIA */}
+      <section id="galeria" className="relative bg-secondary/10 py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-sm font-bold uppercase tracking-widest text-accent">Galería</span>
+            <h2 className="mt-3 font-display text-3xl font-extrabold text-primary sm:text-4xl">
+              Momentos en <span className="text-gradient-gold">Ocumare</span>
+            </h2>
+            <p className="mt-4 font-body text-base text-foreground/70">
+              La casa vacacional, las celebraciones frente al mar y las aventuras en lancha por La Ciénaga.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-2">
+            {galleryFilters.map((f) => (
+              <button
+                key={f}
+                type="button"
+                onClick={() => {
+                  setFilter(f);
+                  setLightbox(null);
+                }}
+                className={`rounded-full px-5 py-2 font-body text-sm font-bold transition-colors ${
+                  filter === f
+                    ? "bg-primary text-white shadow-md shadow-primary/30"
+                    : "bg-white/70 text-foreground/70 hover:bg-white"
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
+            {visible.map((item, i) => (
+              <button
+                key={item.img}
+                type="button"
+                onClick={() => setLightbox(i)}
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg shadow-primary/10"
+              >
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-left font-body text-xs font-semibold text-white sm:text-sm">
+                  {item.alt}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {lightbox !== null && visible[lightbox] && (
+          <div
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4"
+            onClick={() => setLightbox(null)}
+            role="dialog"
+            aria-modal="true"
+          >
+            <button
+              type="button"
+              aria-label="Cerrar"
+              onClick={() => setLightbox(null)}
+              className="absolute right-5 top-5 rounded-full bg-white/15 px-4 py-2 font-body text-sm font-bold text-white"
+            >
+              Cerrar ✕
+            </button>
+            <button
+              type="button"
+              aria-label="Anterior"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox((lightbox - 1 + visible.length) % visible.length);
+              }}
+              className="absolute left-3 rounded-full bg-white/15 px-4 py-3 text-xl text-white sm:left-8"
+            >
+              ‹
+            </button>
+            <figure onClick={(e) => e.stopPropagation()} className="max-w-4xl">
+              <img
+                src={visible[lightbox].img}
+                alt={visible[lightbox].alt}
+                className="max-h-[75vh] w-full rounded-2xl object-contain"
+              />
+              <figcaption className="mt-3 text-center font-body text-sm text-white/90">
+                {visible[lightbox].alt}
+              </figcaption>
+            </figure>
+            <button
+              type="button"
+              aria-label="Siguiente"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox((lightbox + 1) % visible.length);
+              }}
+              className="absolute right-3 rounded-full bg-white/15 px-4 py-3 text-xl text-white sm:right-8"
+            >
+              ›
+            </button>
+          </div>
+        )}
       </section>
 
       {/* CONFIANZA */}
