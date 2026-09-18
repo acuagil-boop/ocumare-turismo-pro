@@ -11,6 +11,12 @@ import galEvento1 from "@/assets/gal-evento-1.jpg";
 import galEvento2 from "@/assets/gal-evento-2.jpg";
 import galBote1 from "@/assets/gal-bote-1.jpg";
 import galBote2 from "@/assets/gal-bote-2.jpg";
+import vidCasaPoster from "@/assets/vid-casa-poster.jpg";
+import vidBotesPoster from "@/assets/vid-botes-poster.jpg";
+import vidBodaPoster from "@/assets/vid-boda-poster.jpg";
+import vidCasa from "@/assets/vid-casa.mp4.asset.json";
+import vidBotes from "@/assets/vid-botes.mp4.asset.json";
+import vidBoda from "@/assets/vid-boda.mp4.asset.json";
 import logoAsset from "@/assets/logo.png.asset.json";
 
 const WHATSAPP_NUMBER = "584243312563";
@@ -93,7 +99,12 @@ const trust = [
 
 const galleryFilters = ["Todo", "Casa", "Eventos", "Botes"] as const;
 
-const gallery = [
+type GalleryItem = { img: string; alt: string; cat: string; video?: string };
+
+const gallery: GalleryItem[] = [
+  { img: vidCasaPoster, alt: "Video real: recorrido por la casa vacacional", cat: "Casa", video: vidCasa.url },
+  { img: vidBodaPoster, alt: "Video real: boda montada a la orilla del mar", cat: "Eventos", video: vidBoda.url },
+  { img: vidBotesPoster, alt: "Video real: lanchas y banana en La Ciénaga", cat: "Botes", video: vidBotes.url },
   { img: galCasa1, alt: "Sala de la casa vacacional con vista al jardín", cat: "Casa" },
   { img: galCasa2, alt: "Terraza y piscina frente al mar", cat: "Casa" },
   { img: casaImg, alt: "Casa vacacional de playa en Ocumare", cat: "Casa" },
@@ -299,6 +310,14 @@ function Index() {
                   height={768}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                {item.video && (
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/85 text-2xl text-primary shadow-lg">
+                      ▶
+                    </span>
+                  </span>
+                )}
+
                 <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-left font-body text-xs font-semibold text-white sm:text-sm">
                   {item.alt}
                 </span>
@@ -334,11 +353,24 @@ function Index() {
               ‹
             </button>
             <figure onClick={(e) => e.stopPropagation()} className="max-w-4xl">
-              <img
-                src={visible[lightbox].img}
-                alt={visible[lightbox].alt}
-                className="max-h-[75vh] w-full rounded-2xl object-contain"
-              />
+              {visible[lightbox].video ? (
+                <video
+                  key={visible[lightbox].video}
+                  src={visible[lightbox].video}
+                  poster={visible[lightbox].img}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="max-h-[75vh] w-full rounded-2xl bg-black object-contain"
+                />
+              ) : (
+                <img
+                  src={visible[lightbox].img}
+                  alt={visible[lightbox].alt}
+                  className="max-h-[75vh] w-full rounded-2xl object-contain"
+                />
+              )}
+
               <figcaption className="mt-3 text-center font-body text-sm text-white/90">
                 {visible[lightbox].alt}
               </figcaption>
