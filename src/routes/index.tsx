@@ -208,7 +208,7 @@ function Index() {
             <span className="text-sm font-bold uppercase tracking-widest text-accent">
               Nuestros Servicios
             </span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold text-foreground sm:text-5xl">
+            <h2 className="mt-3 font-brand text-4xl text-foreground sm:text-6xl">
               Todo para tu viaje a Ocumare
             </h2>
             <p className="mt-4 font-body text-foreground/70 sm:text-lg">
@@ -264,7 +264,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-sm font-bold uppercase tracking-widest text-accent">Galería</span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold text-primary sm:text-4xl">
+            <h2 className="mt-3 font-brand text-4xl text-primary sm:text-6xl">
               Momentos en <span className="text-gradient-gold">Ocumare</span>
             </h2>
             <p className="mt-4 font-body text-base text-foreground/70">
@@ -396,7 +396,7 @@ function Index() {
             <span className="text-sm font-bold uppercase tracking-widest text-gold">
               Por qué elegirnos
             </span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold text-white sm:text-5xl">
+            <h2 className="mt-3 font-brand text-4xl text-white sm:text-6xl">
               Confianza que se siente
             </h2>
             <p className="mt-4 font-body text-white/85 sm:text-lg">
@@ -428,7 +428,7 @@ function Index() {
           <div className="overflow-hidden rounded-[2rem] bg-card shadow-2xl ring-1 ring-border">
             <div className="grid md:grid-cols-2">
               <div className="gradient-tropical p-8 text-white sm:p-12">
-                <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+                <h2 className="font-brand text-4xl sm:text-5xl">
                   Hablemos de tu viaje
                 </h2>
                 <p className="mt-4 font-body text-white/85">
@@ -516,7 +516,7 @@ function Index() {
                 className="h-12 w-12 rounded-full object-cover ring-2 ring-white/40"
               />
               <div>
-                <p className="font-display text-lg font-bold">Ocumare Turismo pro C.A</p>
+                <p className="font-brand text-2xl">Ocumare Turismo Pro</p>
                 <p className="text-sm text-primary-foreground/70">RIF: J-501525862</p>
               </div>
             </div>
