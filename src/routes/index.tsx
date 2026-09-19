@@ -1,16 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import heroImg from "@/assets/hero.jpg";
-import casaImg from "@/assets/casa.jpg";
-import eventosImg from "@/assets/eventos.jpg";
-import aventurasImg from "@/assets/aventuras.jpg";
-import alianzasImg from "@/assets/alianzas.jpg";
-import galCasa1 from "@/assets/gal-casa-1.jpg";
-import galCasa2 from "@/assets/gal-casa-2.jpg";
-import galEvento1 from "@/assets/gal-evento-1.jpg";
-import galEvento2 from "@/assets/gal-evento-2.jpg";
-import galBote1 from "@/assets/gal-bote-1.jpg";
-import galBote2 from "@/assets/gal-bote-2.jpg";
 import vidCasaPoster from "@/assets/vid-casa-poster.jpg";
 import vidBotesPoster from "@/assets/vid-botes-poster.jpg";
 import vidBodaPoster from "@/assets/vid-boda-poster.jpg";
@@ -18,6 +7,15 @@ import vidCasa from "@/assets/vid-casa.mp4.asset.json";
 import vidBotes from "@/assets/vid-botes.mp4.asset.json";
 import vidBoda from "@/assets/vid-boda.mp4.asset.json";
 import logoAsset from "@/assets/logo.png.asset.json";
+import realBote3 from "@/assets/real-bote-3.jpg.asset.json";
+import realBote2 from "@/assets/real-bote-2.jpg.asset.json";
+import realCasaPalmeras from "@/assets/real-bote-1.jpg.asset.json";
+import realCasaPatio from "@/assets/real-casa-53.jpg.asset.json";
+import realCasaPiscinaAlta from "@/assets/real-casa-52.jpg.asset.json";
+import realCasaComplejo from "@/assets/real-casa-4.jpg.asset.json";
+import realCasaAnfitrion from "@/assets/real-casa-3.jpg.asset.json";
+import realCasaFachada from "@/assets/real-casa-2.jpg.asset.json";
+import realCasaTerraza from "@/assets/real-casa-1.jpg.asset.json";
 
 const WHATSAPP_NUMBER = "584243312563";
 const WHATSAPP_MSG =
@@ -49,25 +47,25 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
-    img: casaImg,
+    img: realCasaTerraza.url,
     title: "Casa Vacacional de Playa",
     desc: "Hospedaje exclusivo totalmente equipado con capacidad para hasta 16 personas. Tu hogar frente al mar, con todas las comodidades para una estadía inolvidable.",
     tag: "Hospedaje",
   },
   {
-    img: eventosImg,
+    img: vidBodaPoster,
     title: "Organización de Eventos",
     desc: "Bodas soñadas a la orilla del mar y fiestas en general. Convertimos tu celebración en un momento mágico con el océano de escenario.",
     tag: "Eventos",
   },
   {
-    img: aventurasImg,
+    img: realBote3.url,
     title: "Aventuras a La Ciénaga",
     desc: "Traslados en lancha, paseos en Banana, kayak y snorkeling. Aventura y naturaleza en las aguas turquesa de La Ciénaga.",
     tag: "Aventura",
   },
   {
-    img: alianzasImg,
+    img: realCasaComplejo.url,
     title: "Alianzas de Hospedaje",
     desc: "Red de contactos con posadas, hoteles y casas vacacionales. Te guiamos según tu presupuesto para que elijas el lugar ideal.",
     tag: "Aliados",
@@ -105,15 +103,15 @@ const gallery: GalleryItem[] = [
   { img: vidCasaPoster, alt: "Video real: recorrido por la casa vacacional", cat: "Casa", video: vidCasa.url },
   { img: vidBodaPoster, alt: "Video real: boda montada a la orilla del mar", cat: "Eventos", video: vidBoda.url },
   { img: vidBotesPoster, alt: "Video real: lanchas y banana en La Ciénaga", cat: "Botes", video: vidBotes.url },
-  { img: galCasa1, alt: "Sala de la casa vacacional con vista al jardín", cat: "Casa" },
-  { img: galCasa2, alt: "Terraza y piscina frente al mar", cat: "Casa" },
-  { img: casaImg, alt: "Casa vacacional de playa en Ocumare", cat: "Casa" },
-  { img: galEvento1, alt: "Boda a la orilla del mar al atardecer", cat: "Eventos" },
-  { img: galEvento2, alt: "Fiesta nocturna en la playa con luces cálidas", cat: "Eventos" },
-  { img: eventosImg, alt: "Celebración organizada frente al océano", cat: "Eventos" },
-  { img: galBote1, alt: "Traslado en lancha hacia La Ciénaga", cat: "Botes" },
-  { img: galBote2, alt: "Paseo en Banana sobre aguas turquesa", cat: "Botes" },
-  { img: aventurasImg, alt: "Aventuras acuáticas en La Ciénaga", cat: "Botes" },
+  { img: realCasaPalmeras.url, alt: "Piscina tropical rodeada de palmeras", cat: "Casa" },
+  { img: realCasaPatio.url, alt: "Piscina y patio de la casa vacacional", cat: "Casa" },
+  { img: realCasaComplejo.url, alt: "Área de piscina con vista a la montaña", cat: "Casa" },
+  { img: realCasaAnfitrion.url, alt: "Piscina principal de la casa vacacional", cat: "Casa" },
+  { img: realCasaFachada.url, alt: "Fachada y piscina de la casa vacacional", cat: "Casa" },
+  { img: realCasaTerraza.url, alt: "Terraza tropical junto a la piscina", cat: "Casa" },
+  { img: realCasaPiscinaAlta.url, alt: "Vista completa de la piscina", cat: "Casa" },
+  { img: realBote3.url, alt: "Equipo de Ocumare Turismo navegando hacia La Ciénaga", cat: "Botes" },
+  { img: realBote2.url, alt: "Tripulación durante el traslado en lancha", cat: "Botes" },
 ];
 
 function Index() {
@@ -134,8 +132,8 @@ function Index() {
               height={44}
               className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-accent/60"
             />
-            <span className="hidden font-display text-lg font-extrabold tracking-tight text-primary sm:inline sm:text-xl">
-              Ocumare Turismo
+            <span className="hidden font-brand text-2xl text-primary sm:inline sm:text-3xl">
+              Ocumare Turismo Pro
             </span>
           </a>
           <div className="hidden items-center gap-6 font-body text-sm font-medium text-foreground/80 md:flex">
@@ -158,8 +156,8 @@ function Index() {
       {/* HERO */}
       <section id="inicio" className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <img
-          src={heroImg}
-          alt="Combi playera frente al mar turquesa de Ocumare al atardecer"
+          src={realBote3.url}
+          alt="Equipo de Ocumare Turismo navegando por la costa de Ocumare"
           width={1920}
           height={1080}
           className="absolute inset-0 h-full w-full object-cover"
@@ -169,7 +167,7 @@ function Index() {
           <span className="inline-flex items-center gap-2 rounded-full glass-card px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
             🌴 Ocumare · Venezuela
           </span>
-          <h1 className="mt-6 font-display text-4xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-6xl md:text-7xl">
+          <h1 className="mt-6 font-brand text-5xl leading-tight text-white drop-shadow-lg sm:text-7xl md:text-8xl">
             Descansa, celebra y vive{" "}
             <span className="text-gradient-gold">Ocumare</span> a tu medida.
           </h1>
@@ -210,7 +208,7 @@ function Index() {
             <span className="text-sm font-bold uppercase tracking-widest text-accent">
               Nuestros Servicios
             </span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold text-foreground sm:text-5xl">
+            <h2 className="mt-3 font-brand text-4xl text-foreground sm:text-6xl">
               Todo para tu viaje a Ocumare
             </h2>
             <p className="mt-4 font-body text-foreground/70 sm:text-lg">
@@ -266,7 +264,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-sm font-bold uppercase tracking-widest text-accent">Galería</span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold text-primary sm:text-4xl">
+            <h2 className="mt-3 font-brand text-4xl text-primary sm:text-6xl">
               Momentos en <span className="text-gradient-gold">Ocumare</span>
             </h2>
             <p className="mt-4 font-body text-base text-foreground/70">
@@ -398,7 +396,7 @@ function Index() {
             <span className="text-sm font-bold uppercase tracking-widest text-gold">
               Por qué elegirnos
             </span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold text-white sm:text-5xl">
+            <h2 className="mt-3 font-brand text-4xl text-white sm:text-6xl">
               Confianza que se siente
             </h2>
             <p className="mt-4 font-body text-white/85 sm:text-lg">
@@ -430,7 +428,7 @@ function Index() {
           <div className="overflow-hidden rounded-[2rem] bg-card shadow-2xl ring-1 ring-border">
             <div className="grid md:grid-cols-2">
               <div className="gradient-tropical p-8 text-white sm:p-12">
-                <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+                <h2 className="font-brand text-4xl sm:text-5xl">
                   Hablemos de tu viaje
                 </h2>
                 <p className="mt-4 font-body text-white/85">
@@ -518,7 +516,7 @@ function Index() {
                 className="h-12 w-12 rounded-full object-cover ring-2 ring-white/40"
               />
               <div>
-                <p className="font-display text-lg font-bold">Ocumare Turismo pro C.A</p>
+                <p className="font-brand text-2xl">Ocumare Turismo Pro</p>
                 <p className="text-sm text-primary-foreground/70">RIF: J-501525862</p>
               </div>
             </div>
