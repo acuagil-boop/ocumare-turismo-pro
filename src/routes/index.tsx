@@ -16,6 +16,21 @@ import realCasaComplejo from "@/assets/real-casa-4.jpg.asset.json";
 import realCasaAnfitrion from "@/assets/real-casa-3.jpg.asset.json";
 import realCasaFachada from "@/assets/real-casa-2.jpg.asset.json";
 import realCasaTerraza from "@/assets/real-casa-1.jpg.asset.json";
+import realCasa6 from "@/assets/real-casa-6.jpg.asset.json";
+import realCasa7 from "@/assets/real-casa-7.jpg.asset.json";
+import realCasa8 from "@/assets/real-casa-8.jpg.asset.json";
+import realCasa9 from "@/assets/real-casa-9.jpg.asset.json";
+import realCasa10 from "@/assets/real-casa-10.jpg.asset.json";
+import realCasa11 from "@/assets/real-casa-11.jpg.asset.json";
+import realCasa12 from "@/assets/real-casa-12.jpg.asset.json";
+import realCasa13 from "@/assets/real-casa-13.jpg.asset.json";
+import realCasa14 from "@/assets/real-casa-14.jpg.asset.json";
+import realCasa15 from "@/assets/real-casa-15.jpg.asset.json";
+import realCasa16 from "@/assets/real-casa-16.jpg.asset.json";
+import realCasa17 from "@/assets/real-casa-17.jpg.asset.json";
+import realCasa18 from "@/assets/real-casa-18.jpg.asset.json";
+import realBote4 from "@/assets/real-bote-4.jpg.asset.json";
+import realBote5 from "@/assets/real-bote-5.jpg.asset.json";
 
 const WHATSAPP_NUMBER = "584243312563";
 const WHATSAPP_MSG =
