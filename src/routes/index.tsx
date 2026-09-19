@@ -127,6 +127,21 @@ const gallery: GalleryItem[] = [
   { img: realCasaPiscinaAlta.url, alt: "Vista completa de la piscina", cat: "Casa" },
   { img: realBote3.url, alt: "Equipo de Ocumare Turismo navegando hacia La Ciénaga", cat: "Botes" },
   { img: realBote2.url, alt: "Tripulación durante el traslado en lancha", cat: "Botes" },
+  { img: realCasa6.url, alt: "Complejo vacacional con piscina y edificación de ladrillos", cat: "Casa" },
+  { img: realCasa7.url, alt: "Piscina privada en patio con plantas decorativas", cat: "Casa" },
+  { img: realCasa8.url, alt: "Casa de madera con piscina circular y bohío", cat: "Casa" },
+  { img: realCasa9.url, alt: "Detalle de piscina con mosaico de delfines y cascada", cat: "Casa" },
+  { img: realCasa10.url, alt: "Piscina con hidromasaje y vista a las montañas", cat: "Casa" },
+  { img: realCasa11.url, alt: "Patio con piscina, sillas y zona de hamacas", cat: "Casa" },
+  { img: realCasa12.url, alt: "Piscina de forma irregular con sillas Adirondack", cat: "Casa" },
+  { img: realCasa13.url, alt: "Piscina alargada con jacuzzi circular", cat: "Casa" },
+  { img: realCasa14.url, alt: "Piscina y casa de hospedaje local", cat: "Casa" },
+  { img: realCasa15.url, alt: "Casa vacacional con terraza techada y piscina", cat: "Casa" },
+  { img: realCasa16.url, alt: "Piscina moderna con porche y montañas al fondo", cat: "Casa" },
+  { img: realCasa17.url, alt: "Piscina con tobogán y vista a las montañas verdes", cat: "Casa" },
+  { img: realCasa18.url, alt: "Piscina con burbujas rodeada de palmeras y mar al fondo", cat: "Casa" },
+  { img: realBote4.url, alt: "Tripulación en lancha con camisetas de Ocumare Turismo", cat: "Botes" },
+  { img: realBote5.url, alt: "Grupo de pasajeros disfrutando el paseo en lancha turquesa", cat: "Botes" },
 ];
 
 function Index() {
