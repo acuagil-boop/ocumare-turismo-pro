@@ -24,13 +24,13 @@ import realCasa10 from "@/assets/real-casa-10.jpg.asset.json";
 import realCasa11 from "@/assets/real-casa-11.jpg.asset.json";
 import realCasa12 from "@/assets/real-casa-12.jpg.asset.json";
 import realCasa13 from "@/assets/real-casa-13.jpg.asset.json";
-import realCasa14 from "@/assets/real-casa-14.jpg.asset.json";
-import realCasa15 from "@/assets/real-casa-15.jpg.asset.json";
-import realCasa16 from "@/assets/real-casa-16.jpg.asset.json";
-import realCasa17 from "@/assets/real-casa-17.jpg.asset.json";
-import realCasa18 from "@/assets/real-casa-18.jpg.asset.json";
-import realBote4 from "@/assets/real-bote-4.jpg.asset.json";
-import realBote5 from "@/assets/real-bote-5.jpg.asset.json";
+import realCasa19 from "@/assets/real-casa-19.jpg.asset.json";
+import realCasa20 from "@/assets/real-casa-20.jpg.asset.json";
+import realCasa21 from "@/assets/real-casa-21.jpg.asset.json";
+import realBote6 from "@/assets/real-bote-6.jpg.asset.json";
+import realBote7 from "@/assets/real-bote-7.jpg.asset.json";
+import realBote8 from "@/assets/real-bote-8.jpg.asset.json";
+import realBote9 from "@/assets/real-bote-9.jpg.asset.json";
 
 const WHATSAPP_NUMBER = "584243312563";
 const WHATSAPP_MSG =
@@ -135,13 +135,13 @@ const gallery: GalleryItem[] = [
   { img: realCasa11.url, alt: "Patio con piscina, sillas y zona de hamacas", cat: "Casa" },
   { img: realCasa12.url, alt: "Piscina de forma irregular con sillas Adirondack", cat: "Casa" },
   { img: realCasa13.url, alt: "Piscina alargada con jacuzzi circular", cat: "Casa" },
-  { img: realCasa14.url, alt: "Piscina y casa de hospedaje local", cat: "Casa" },
-  { img: realCasa15.url, alt: "Casa vacacional con terraza techada y piscina", cat: "Casa" },
-  { img: realCasa16.url, alt: "Piscina moderna con porche y montañas al fondo", cat: "Casa" },
-  { img: realCasa17.url, alt: "Piscina con tobogán y vista a las montañas verdes", cat: "Casa" },
-  { img: realCasa18.url, alt: "Piscina con burbujas rodeada de palmeras y mar al fondo", cat: "Casa" },
-  { img: realBote4.url, alt: "Tripulación en lancha con camisetas de Ocumare Turismo", cat: "Botes" },
-  { img: realBote5.url, alt: "Grupo de pasajeros disfrutando el paseo en lancha turquesa", cat: "Botes" },
+  { img: realCasa19.url, alt: "Piscina rectangular con mosaicos azules y balaustrada blanca", cat: "Casa" },
+  { img: realCasa20.url, alt: "Piscinas iluminadas de noche con luces subacuáticas", cat: "Casa" },
+  { img: realCasa21.url, alt: "Piscina con inflable de tortuga y zona de descanso", cat: "Casa" },
+  { img: realBote6.url, alt: "Visitantes disfrutando la playa de Ocumare", cat: "Botes" },
+  { img: realBote7.url, alt: "Grupo de turistas en paseo en lancha por la costa", cat: "Botes" },
+  { img: realBote8.url, alt: "Peñero descansando en la orilla de la playa", cat: "Botes" },
+  { img: realBote9.url, alt: "Pelícano sobre bote de pedales con banana boat al fondo", cat: "Botes" },
 ];
 
 function Index() {
