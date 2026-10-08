@@ -10,7 +10,7 @@ const PAGOS = [
   { name: "Pago Móvil (Bs)", lines: ["Banco de Venezuela", "C.I: 16338561", "Tlf: 0424-3312563"] },
   {
     name: "Transferencia (Bs)",
-    lines: ["Banesco", "Cuenta: 0134-0147-12-1471052494", "Eduardo Vielma · C.I: 16338561"],
+    lines: ["Banesco", "Cuenta: 0134-0147-12-1471052494", "Eduardo Vielma", "C.I: 16338561"],
   },
   { name: "Binance Pay", lines: ["ID: 864833311"] },
   { name: "PayPal", lines: ["Correo: por confirmar"] },
@@ -193,7 +193,7 @@ export function ReservaOnline() {
 
             <div className="rounded-3xl border bg-card p-6 shadow-lg">
               <h3 className="text-lg font-bold">Formas de pago</h3>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              <div className="mt-4 grid gap-3">
                 {PAGOS.map((p) => (
                   <button key={p.name} type="button" onClick={() => setMetodo(p.name)}
                     className={`rounded-2xl border p-3 text-left text-sm transition-colors ${metodo === p.name ? "border-primary bg-primary/10" : "hover:border-accent"}`}>
