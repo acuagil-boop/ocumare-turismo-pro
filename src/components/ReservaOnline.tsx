@@ -5,12 +5,16 @@ const WHATSAPP_NUMBER = "584243312563";
 // Tasa BCV del día (Bs por USD). Actualizar según el BCV.
 const TASA_BCV_DEFAULT = 0;
 
-// Datos de pago (por confirmar con el cliente)
+// Datos de pago reales del cliente
 const PAGOS = [
   { name: "Pago Móvil (Bs)", lines: ["Banco de Venezuela", "C.I: 16338561", "Tlf: 0424-3312563"] },
+  {
+    name: "Transferencia (Bs)",
+    lines: ["Banesco", "Cuenta: 0134-0147-12-1471052494", "Eduardo Vielma · C.I: 16338561"],
+  },
+  { name: "Binance Pay", lines: ["ID: 864833311"] },
   { name: "PayPal", lines: ["Correo: por confirmar"] },
   { name: "Zelle", lines: ["Usuario: por confirmar"] },
-  { name: "Binance Pay", lines: ["Usuario / ID: por confirmar"] },
 ];
 
 type Servicio = "casa" | "lancha" | "kayak" | "boda" | "evento";
