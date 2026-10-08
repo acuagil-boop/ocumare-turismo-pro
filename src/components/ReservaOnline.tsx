@@ -7,7 +7,7 @@ const TASA_BCV_DEFAULT = 0;
 
 // Datos de pago (por confirmar con el cliente)
 const PAGOS = [
-  { name: "Pago Móvil (Bs)", lines: ["Banco: por confirmar", "Teléfono: por confirmar", "RIF: J-501525862"] },
+  { name: "Pago Móvil (Bs)", lines: ["Banco de Venezuela", "C.I: 16338561", "Tlf: 0424-3312563"] },
   { name: "PayPal", lines: ["Correo: por confirmar"] },
   { name: "Zelle", lines: ["Usuario: por confirmar"] },
   { name: "Binance Pay", lines: ["Usuario / ID: por confirmar"] },
@@ -42,7 +42,7 @@ export function ReservaOnline() {
   const [paquete, setPaquete] = useState<"basico" | "full">("basico");
   const [tasa, setTasa] = useState(TASA_BCV_DEFAULT);
   const [nombre, setNombre] = useState("");
-  const [metodo, setMetodo] = useState(PAGOS[0].name);
+  const [metodo, setMetodo] = useState("Pago Móvil (Bs)");
   const [referencia, setReferencia] = useState("");
   const [archivo, setArchivo] = useState<string>("");
 
