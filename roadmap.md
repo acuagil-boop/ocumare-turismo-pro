@@ -5,3 +5,5 @@
 - [x] Agregar 15 fotos nuevas a la galería (13 Casa + 2 Botes).
 - [x] Reemplazar 7 fotos duplicadas por 7 fotos únicas (4 Botes/playa + 3 Casa).
 - [x] Sección Reserva Online con precios (casa/lancha/kayak/bodas, con/sin Cashea) y formas de pago
+- [x] Datos de pago confirmados: Pago Móvil BDV, Transferencia Banesco (0134-0147-12-1471052494, Eduardo Vielma, C.I 16338561) y Binance Pay ID 864833311
+- [ ] Agregar correo de PayPal y usuario de Zelle cuando el cliente los envíe (hoy aparecen "por confirmar")
