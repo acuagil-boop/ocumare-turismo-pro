@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { ReservaOnline } from "@/components/ReservaOnline";
 import vidCasaPoster from "@/assets/vid-casa-poster.jpg";
 import vidBotesPoster from "@/assets/vid-botes-poster.jpg";
 import vidBodaPoster from "@/assets/vid-boda-poster.jpg";
@@ -169,6 +170,7 @@ function Index() {
           <div className="hidden items-center gap-6 font-body text-sm font-medium text-foreground/80 md:flex">
             <a href="#servicios" className="transition-colors hover:text-primary">Servicios</a>
             <a href="#galeria" className="transition-colors hover:text-primary">Galería</a>
+            <a href="#reservas" className="transition-colors hover:text-primary">Reservas</a>
             <a href="#confianza" className="transition-colors hover:text-primary">Por qué elegirnos</a>
             <a href="#contacto" className="transition-colors hover:text-primary">Contacto</a>
           </div>
@@ -417,6 +419,8 @@ function Index() {
           </div>
         )}
       </section>
+
+      <ReservaOnline />
 
       {/* CONFIANZA */}
       <section id="confianza" className="relative overflow-hidden py-20 sm:py-28">
