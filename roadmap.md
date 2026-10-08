@@ -4,3 +4,4 @@
 - [x] Verificar la página en escritorio y móvil.
 - [x] Agregar 15 fotos nuevas a la galería (13 Casa + 2 Botes).
 - [x] Reemplazar 7 fotos duplicadas por 7 fotos únicas (4 Botes/playa + 3 Casa).
+- [x] Sección Reserva Online con precios (casa/lancha/kayak/bodas, con/sin Cashea) y formas de pago
