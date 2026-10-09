@@ -518,7 +518,7 @@ function Index() {
                     IG
                   </a>
                   <a
-                    href="https://www.facebook.com/search/top?q=Ocumare%20Turismo"
+                    href="https://www.facebook.com/ocumareturismo"
                     aria-label="Facebook"
                     target="_blank" rel="noopener noreferrer" title="Facebook: Ocumare Turismo"
                     className="grid h-11 w-11 place-items-center rounded-full bg-ocean text-white transition-transform hover:scale-110"
