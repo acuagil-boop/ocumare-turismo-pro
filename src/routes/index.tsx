@@ -42,13 +42,13 @@ const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATS
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ocumare Turismo Pro C.A — Vive la mejor experiencia playera en Ocumare" },
+      { title: "Ocumare Turismo Pro" },
       {
         name: "description",
         content:
           "Casa vacacional de playa para 16 personas, bodas a la orilla del mar, aventuras en La Ciénaga y alianzas de hospedaje. Tu viaje a Ocumare en un solo lugar.",
       },
-      { property: "og:title", content: "Ocumare Turismo Pro C.A — Vive la mejor experiencia playera en Ocumare" },
+      { property: "og:title", content: "Ocumare Turismo Pro" },
       {
         property: "og:description",
         content:
@@ -510,22 +510,25 @@ function Index() {
 
                 <div className="mt-8 flex gap-3">
                   <a
-                    href="#"
+                    href="https://www.instagram.com/ocumareturismopro/"
                     aria-label="Instagram"
+                    target="_blank" rel="noopener noreferrer" title="Instagram @ocumareturismopro"
                     className="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-110"
                   >
                     IG
                   </a>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/search/top?q=Ocumare%20Turismo"
                     aria-label="Facebook"
+                    target="_blank" rel="noopener noreferrer" title="Facebook: Ocumare Turismo"
                     className="grid h-11 w-11 place-items-center rounded-full bg-ocean text-white transition-transform hover:scale-110"
                   >
                     FB
                   </a>
                   <a
-                    href="#"
+                    href="https://www.tiktok.com/@ocumareturismo"
                     aria-label="TikTok"
+                    target="_blank" rel="noopener noreferrer" title="TikTok @ocumareturismo"
                     className="grid h-11 w-11 place-items-center rounded-full bg-foreground text-background transition-transform hover:scale-110"
                   >
                     TT
