@@ -131,7 +131,7 @@ export function ReservaOnline() {
               </div>
             </div>
 
-            {servicio !== "evento" && (
+            {servicio !== "evento" && servicio !== "boda" && (
               <div className="flex flex-wrap gap-2">
                 <button type="button" onClick={() => setCashea(false)} className={chip(!cashea)}>De contado</button>
                 <button type="button" onClick={() => setCashea(true)} className={chip(cashea)}>Con Cashea</button>
@@ -150,13 +150,24 @@ export function ReservaOnline() {
                 <legend className={label}>Paquete de boda</legend>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {PAQUETES_BODA.map((p) => (
-                    <Button key={p.id} type="button" variant="outline"
-                      aria-pressed={paquete === p.id} onClick={() => setPaquete(p.id)}
-                      className={`h-auto min-w-0 flex-col items-start gap-2 whitespace-normal rounded-lg p-4 text-left ${paquete === p.id ? "border-primary bg-primary/10 text-foreground" : "text-foreground"}`}>
+                    <div key={p.id}
+                      className={`rounded-lg border p-4 transition-colors ${paquete === p.id ? "border-primary bg-primary/10" : "border-input bg-background"}`}>
                       <span className="text-base font-bold">{p.label}</span>
-                      <span className="text-sm text-muted-foreground">De contado: <strong className="text-foreground">${p.contado}</strong></span>
-                      <span className="text-sm text-muted-foreground">Con Cashea: <strong className="text-foreground">${p.cashea}</strong></span>
-                    </Button>
+                      <div className="mt-3 grid gap-2">
+                        <button type="button" aria-pressed={paquete === p.id && !cashea}
+                          onClick={() => { setPaquete(p.id); setCashea(false); }}
+                          className={`flex items-center justify-between rounded-xl border px-3 py-2 text-sm transition-colors ${paquete === p.id && !cashea ? "border-primary bg-primary/15 font-semibold text-foreground" : "border-input hover:border-accent"}`}>
+                          <span>De contado</span>
+                          <strong>${p.contado}</strong>
+                        </button>
+                        <button type="button" aria-pressed={paquete === p.id && cashea}
+                          onClick={() => { setPaquete(p.id); setCashea(true); }}
+                          className={`flex items-center justify-between rounded-xl border px-3 py-2 text-sm transition-colors ${paquete === p.id && cashea ? "border-primary bg-primary/15 font-semibold text-foreground" : "border-input hover:border-accent"}`}>
+                          <span>Con Cashea</span>
+                          <strong>${p.cashea}</strong>
+                        </button>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </fieldset>
