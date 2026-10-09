@@ -1,4 +1,15 @@
 import { useMemo, useState } from "react";
+import { Button } from "@/components/ui/button";
+
+export const PAQUETES_BODA = [
+  { id: "basico", label: "Paquete básico", contado: 300, cashea: 350 },
+  { id: "full", label: "Paquete full", contado: 400, cashea: 450 },
+] as const;
+
+export function precioBoda(paquete: "basico" | "full", cashea: boolean) {
+  const opcion = PAQUETES_BODA.find((p) => p.id === paquete);
+  return opcion ? opcion[cashea ? "cashea" : "contado"] : 0;
+}
 
 const WHATSAPP_NUMBER = "584243312563";
 
@@ -66,7 +77,7 @@ export function ReservaOnline() {
       case "kayak":
         return p * (cashea ? 7 : 5);
       case "boda":
-        return paquete === "basico" ? (cashea ? 350 : 300) : cashea ? 450 : 400;
+        return precioBoda(paquete, cashea);
       default:
         return 0;
     }
@@ -76,7 +87,8 @@ export function ReservaOnline() {
   const valido = nombre.trim().length > 1 && (esCasa ? noches > 0 : !!entrada) && personas >= 1;
 
   const enviar = () => {
-    const s = SERVICIOS.find((x) => x.id === servicio)!.label;
+    const s = SERVICIOS.find((x) => x.id === servicio)?.label;
+    if (!s) return;
     const msg = [
       "¡Hola Ocumare Turismo Pro! Quiero confirmar mi reserva:",
       `• Nombre: ${nombre.trim().slice(0, 80)}`,
@@ -134,10 +146,20 @@ export function ReservaOnline() {
             )}
 
             {servicio === "boda" && (
-              <div className="flex flex-wrap gap-2">
-                <button type="button" onClick={() => setPaquete("basico")} className={chip(paquete === "basico")}>Paquete básico</button>
-                <button type="button" onClick={() => setPaquete("full")} className={chip(paquete === "full")}>Paquete full</button>
-              </div>
+              <fieldset>
+                <legend className={label}>Paquete de boda</legend>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {PAQUETES_BODA.map((p) => (
+                    <Button key={p.id} type="button" variant="outline"
+                      aria-pressed={paquete === p.id} onClick={() => setPaquete(p.id)}
+                      className={`h-auto min-w-0 flex-col items-start gap-2 whitespace-normal rounded-lg p-4 text-left ${paquete === p.id ? "border-primary bg-primary/10 text-foreground" : "text-foreground"}`}>
+                      <span className="text-base font-bold">{p.label}</span>
+                      <span className="text-sm text-muted-foreground">De contado: <strong className="text-foreground">${p.contado}</strong></span>
+                      <span className="text-sm text-muted-foreground">Con Cashea: <strong className="text-foreground">${p.cashea}</strong></span>
+                    </Button>
+                  ))}
+                </div>
+              </fieldset>
             )}
 
             <div className="grid gap-4 sm:grid-cols-3">
@@ -167,7 +189,7 @@ export function ReservaOnline() {
               {esCasa && <>Casa: 1 noche ${CASA[temporada][cashea ? "cashea" : "contado"][0]} · 2 noches ${CASA[temporada][cashea ? "cashea" : "contado"][1]} (hasta 16 personas).</>}
               {servicio === "lancha" && <>Lancha a La Ciénaga: ${cashea ? 12 : 10} por persona.</>}
               {servicio === "kayak" && <>Kayak 30 minutos: ${cashea ? 7 : 5} por persona.</>}
-              {servicio === "boda" && <>Básico $300 contado / $350 Cashea · Full $400 contado / $450 Cashea.</>}
+              {servicio === "boda" && <>{paquete === "basico" ? "Paquete básico" : "Paquete full"}: ${total} {cashea ? "con Cashea" : "de contado"}.</>}
               {servicio === "evento" && <>El precio depende del tipo de evento. Envíanos tu solicitud y te cotizamos.</>}
             </div>
           </div>

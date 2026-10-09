@@ -1,4 +1,8 @@
 # Roadmap
+- [x] Separar paquetes básico y full de bodas con sus precios individuales y verificar los cuatro totales.
+- [x] Verificar nombre Ocumare Turismo Pro y aclarar cómo renombrar el proyecto en el editor.
+- [x] Enlazar Instagram @ocumareturismopro y TikTok @ocumareturismo.
+- [ ] Sustituir búsqueda de Facebook por enlace directo (pendiente URL exacta del cliente).
 - [x] Reemplazar todas las imágenes ilustrativas por fotos reales, ubicadas en Casa y Botes.
 - [x] Usar una tipografía manuscrita como la referencia en el nombre superior y los títulos inferiores.
 - [x] Verificar la página en escritorio y móvil.
