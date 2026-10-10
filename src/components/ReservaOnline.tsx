@@ -13,8 +13,13 @@ export function precioBoda(paquete: "basico" | "full", cashea: boolean) {
 
 const WHATSAPP_NUMBER = "584243312563";
 
-// Tasa BCV del día (Bs por USD). Actualizar según el BCV.
-const TASA_BCV_DEFAULT = 0;
+// Tasa oficial del euro del día (Bs por EUR), ingresada por el cliente.
+const TASA_EURO_DEFAULT = 0;
+
+export function convertirABolivares(importe: number, tasaEuro: number) {
+  if (!Number.isFinite(importe) || !Number.isFinite(tasaEuro) || importe < 0 || tasaEuro <= 0) return 0;
+  return Math.round((importe * tasaEuro + Number.EPSILON) * 100) / 100;
+}
 
 // Datos de pago reales del cliente
 const PAGOS = [
@@ -55,7 +60,7 @@ export function ReservaOnline() {
   const [salida, setSalida] = useState("");
   const [personas, setPersonas] = useState(2);
   const [paquete, setPaquete] = useState<"basico" | "full">("basico");
-  const [tasa, setTasa] = useState(TASA_BCV_DEFAULT);
+  const [tasaEuro, setTasaEuro] = useState(TASA_EURO_DEFAULT);
   const [nombre, setNombre] = useState("");
   const [metodo, setMetodo] = useState("Pago Móvil (Bs)");
   const [referencia, setReferencia] = useState("");
@@ -83,6 +88,8 @@ export function ReservaOnline() {
     }
   }, [servicio, noches, temporada, cashea, personas, paquete]);
 
+  const totalBolivares = convertirABolivares(total, tasaEuro);
+
   const esCasa = servicio === "casa";
   const valido = nombre.trim().length > 1 && (esCasa ? noches > 0 : !!entrada) && personas >= 1;
 
@@ -98,7 +105,8 @@ export function ReservaOnline() {
       esCasa ? `• Fecha de salida: ${salida} (${noches} noche${noches === 1 ? "" : "s"})` : "",
       `• Personas: ${personas}`,
       `• Modalidad: ${cashea ? "Con Cashea" : "De contado"}`,
-      servicio === "evento" ? "• Total: a cotizar" : `• Total: $${total}${tasa > 0 ? ` (Bs ${(total * tasa).toFixed(2)})` : ""}`,
+      servicio === "evento" ? "• Total: a cotizar" : `• Total: $${total}${tasaEuro > 0 ? ` (Bs ${totalBolivares.toFixed(2)})` : ""}`,
+      servicio !== "evento" && tasaEuro > 0 ? `• Tasa Euro aplicada: ${tasaEuro.toFixed(2)} Bs/€ (oficial BCV)` : "",
       `• Método de pago: ${metodo}`,
       referencia ? `• Referencia: ${referencia.trim().slice(0, 60)}` : "",
       archivo ? `• Comprobante: ${archivo} (lo adjunto en este chat)` : "",
@@ -214,12 +222,13 @@ export function ReservaOnline() {
                 <>
                   <p className="mt-2 font-display text-5xl font-bold">${total}</p>
                   {esCasa && <p className="mt-1 text-sm opacity-90">{noches} noche{noches === 1 ? "" : "s"}</p>}
-                  <p className="mt-3 text-lg font-semibold">{tasa > 0 ? `Bs ${(total * tasa).toLocaleString("es-VE", { minimumFractionDigits: 2 })}` : "Bs: indica la tasa del día"}</p>
+                   <p className="mt-3 text-lg font-semibold">{tasaEuro > 0 ? `Bs ${totalBolivares.toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "Bs: indica la tasa del euro del día"}</p>
                   <label className="mt-3 flex items-center gap-2 text-sm">
-                    Tasa BCV (Bs/$)
-                    <input type="number" min={0} step="0.01" value={tasa || ""} onChange={(e) => setTasa(Math.max(0, Number(e.target.value) || 0))}
+                     Tasa Euro (Bs/€)
+                     <input type="number" min={0} step="0.01" value={tasaEuro || ""} onChange={(e) => setTasaEuro(Math.max(0, Number(e.target.value) || 0))}
                       className="w-28 rounded-lg bg-background/90 px-2 py-1 text-foreground" />
                   </label>
+                   <p className="mt-2 text-xs opacity-90">Referencia: euro oficial BCV del día.</p>
                 </>
               )}
             </div>

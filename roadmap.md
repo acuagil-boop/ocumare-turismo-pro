@@ -1,4 +1,5 @@
 # Roadmap
+- [x] Cambiar la referencia de reservas a Tasa Euro y verificar conversión a bolívares y mensaje de WhatsApp.
 - [x] Separar paquetes básico y full de bodas con sus precios individuales y verificar los cuatro totales.
 - [x] Verificar nombre Ocumare Turismo Pro y aclarar cómo renombrar el proyecto en el editor.
 - [x] Enlazar Instagram @ocumareturismopro y TikTok @ocumareturismo.
