@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep wedding package prices in the booking component's shared package table so selection and total calculation use the same values.
+- Use the booking component's shared currency conversion function for both the displayed bolivar total and the WhatsApp message so both amounts agree.
