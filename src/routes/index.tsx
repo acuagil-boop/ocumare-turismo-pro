@@ -32,6 +32,15 @@ import realBote6 from "@/assets/real-bote-6.jpg.asset.json";
 import realBote7 from "@/assets/real-bote-7.jpg.asset.json";
 import realBote8 from "@/assets/real-bote-8.jpg.asset.json";
 import realBote9 from "@/assets/real-bote-9.jpg.asset.json";
+import bodaCeremonia from "@/assets/boda-ceremonia.jpg.asset.json";
+import bodaNovios from "@/assets/boda-novios.jpg.asset.json";
+import bodaArco from "@/assets/boda-arco.jpg.asset.json";
+import bodaPosterNovia from "@/assets/boda-poster-novia.jpg.asset.json";
+import bodaPosterCeremonia from "@/assets/boda-poster-ceremonia.jpg.asset.json";
+import bodaPosterPlaya from "@/assets/boda-poster-playa.jpg.asset.json";
+import bodaVideoNovia from "@/assets/boda-video-novia.mp4.asset.json";
+import bodaVideoCeremonia from "@/assets/boda-video-ceremonia.mp4.asset.json";
+import bodaVideoPlaya from "@/assets/boda-video-playa.mp4.asset.json";
 
 const WHATSAPP_NUMBER = "584243312563";
 const RIF = "J-50152586-2";
