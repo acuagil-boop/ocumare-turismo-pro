@@ -29,7 +29,7 @@ const PAGOS = [
     lines: ["Banesco", "Cuenta: 0134-0147-12-1471052494", "Eduardo Vielma", "C.I: 16338561"],
   },
   { name: "Binance Pay", lines: ["ID: 864833311"] },
-  { name: "PayPal", lines: ["Correo: por confirmar"] },
+  { name: "PayPal", lines: ["Correo: cienagaocumare1984@gmail.com"] },
   { name: "Zelle", lines: ["Usuario: por confirmar"] },
 ];
 
