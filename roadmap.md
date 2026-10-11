@@ -13,3 +13,4 @@
 - [x] Datos de pago confirmados: Pago Móvil BDV, Transferencia Banesco (0134-0147-12-1471052494, Eduardo Vielma, C.I 16338561) y Binance Pay ID 864833311
 - [x] Correo de PayPal confirmado: cienagaocumare1984@gmail.com
 - [ ] Agregar usuario de Zelle cuando el cliente lo envíe (hoy aparece "por confirmar")
+- [x] Mostrar el RIF J-50152586-2 junto al nombre de la empresa en el menú y el pie.

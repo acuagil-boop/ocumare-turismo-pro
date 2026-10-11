@@ -34,6 +34,7 @@ import realBote8 from "@/assets/real-bote-8.jpg.asset.json";
 import realBote9 from "@/assets/real-bote-9.jpg.asset.json";
 
 const WHATSAPP_NUMBER = "584243312563";
+const RIF = "J-50152586-2";
 const WHATSAPP_MSG =
   "¡Hola Ocumare Turismo! Quiero más información para reservar mi experiencia en la playa.";
 
@@ -163,8 +164,13 @@ function Index() {
               height={44}
               className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-accent/60"
             />
-            <span className="hidden font-brand text-2xl text-primary sm:inline sm:text-3xl">
-              Ocumare Turismo Pro
+            <span className="hidden flex-col sm:flex">
+              <span className="font-brand text-2xl text-primary sm:text-3xl">
+                Ocumare Turismo Pro
+              </span>
+              <span className="text-[11px] font-semibold uppercase tracking-wide text-primary/70">
+                RIF {RIF}
+              </span>
             </span>
           </a>
           <div className="hidden items-center gap-6 font-body text-sm font-medium text-foreground/80 md:flex">
@@ -554,7 +560,7 @@ function Index() {
               />
               <div>
                 <p className="font-brand text-2xl">Ocumare Turismo Pro</p>
-                <p className="text-sm text-primary-foreground/70">RIF: J-501525862</p>
+                <p className="text-sm text-primary-foreground/70">RIF: {RIF}</p>
               </div>
             </div>
             <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-primary-foreground/80">
@@ -564,7 +570,7 @@ function Index() {
             </nav>
           </div>
           <div className="mt-8 border-t border-white/15 pt-6 text-center text-sm text-primary-foreground/60">
-            © {new Date().getFullYear()} Ocumare Turismo pro C.A · RIF: J-501525862 · Todos los derechos reservados.
+            © {new Date().getFullYear()} Ocumare Turismo Pro C.A · RIF: {RIF} · Todos los derechos reservados.
           </div>
         </div>
       </footer>
