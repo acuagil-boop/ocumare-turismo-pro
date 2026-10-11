@@ -153,6 +153,12 @@ const gallery: GalleryItem[] = [
   { img: realBote7.url, alt: "Grupo de turistas en paseo en lancha por la costa", cat: "Botes" },
   { img: realBote8.url, alt: "Peñero descansando en la orilla de la playa", cat: "Botes" },
   { img: realBote9.url, alt: "Pelícano sobre bote de pedales con banana boat al fondo", cat: "Botes" },
+  { img: bodaPosterNovia.url, alt: "Video real: la novia llegando con su ramo de flores", cat: "Eventos", video: bodaVideoNovia.url },
+  { img: bodaPosterCeremonia.url, alt: "Video real: ceremonia de boda con arco floral a la orilla del mar", cat: "Eventos", video: bodaVideoCeremonia.url },
+  { img: bodaPosterPlaya.url, alt: "Video real: montaje de boda entre las palmeras de la playa", cat: "Eventos", video: bodaVideoPlaya.url },
+  { img: bodaArco.url, alt: "Arco de boda con velos blancos y flores frente al mar", cat: "Eventos" },
+  { img: bodaNovios.url, alt: "Novios en la mesa de honor de su boda en la playa", cat: "Eventos" },
+  { img: bodaCeremonia.url, alt: "Ceremonia de boda con padrinos y novios a la orilla del mar", cat: "Eventos" },
 ];
 
 function Index() {
