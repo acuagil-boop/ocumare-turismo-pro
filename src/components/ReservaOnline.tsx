@@ -22,7 +22,7 @@ export function convertirABolivares(importe: number, tasaEuro: number) {
 }
 
 // Datos de pago reales del cliente
-const PAGOS = [
+export const PAGOS = [
   { name: "Pago Móvil (Bs)", lines: ["Banco de Venezuela", "C.I: 16338561", "Tlf: 0424-3312563"] },
   {
     name: "Transferencia (Bs)",
